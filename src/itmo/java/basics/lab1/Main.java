@@ -48,7 +48,7 @@ public class Main {
     }
 
     public static double getNumber3() { // Задание 3, функция
-        double number = 10500;
+        double number = (double) 10500;
         double result = (double) (number / 10) / 10;
         return result;
     }
