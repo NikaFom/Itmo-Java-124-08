@@ -5,7 +5,8 @@ public class Main {
         calculator.sum(323902930L, 489248923L);
         calculator.sum(20.94, 54.1);
         calculator.division(48, 8);
-        calculator.division(25, 5);
+        calculator.division(25, 6);
+        calculator.division(100009020L, 3000049L);
         calculator.multiplication(0.1, 0.2);
         calculator.subtraction(40594L, 30854L);
 

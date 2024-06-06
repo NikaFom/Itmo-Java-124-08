@@ -26,13 +26,13 @@ public class Calculator {
     }
 
     public double division(long number1, long number2) {
-        double division = number1 / number2;
+        double division = (double) number1 / number2;
         System.out.println(division);
         return division;
     }
 
     public double division(int number1, int number2) {
-        double division = number1 / number2;
+        double division = (double) number1 / number2;
         System.out.println(division);
         return division;
     }
