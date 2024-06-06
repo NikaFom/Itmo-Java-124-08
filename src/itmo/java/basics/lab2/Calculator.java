@@ -25,14 +25,14 @@ public class Calculator {
         return division;
     }
 
-    public long division(long number1, long number2) {
-        long division = number1 / number2;
+    public double division(long number1, long number2) {
+        double division = number1 / number2;
         System.out.println(division);
         return division;
     }
 
-    public int division(int number1, int number2) {
-        int division = number1 / number2;
+    public double division(int number1, int number2) {
+        double division = number1 / number2;
         System.out.println(division);
         return division;
     }
