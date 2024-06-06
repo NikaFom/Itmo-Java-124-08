@@ -48,8 +48,8 @@ public class Main {
     }
 
     public static double getNumber3() { // Задание 3, функция
-        double number = (double) 10500;
-        double result = (double) (number / 10) / 10;
+        double number = 10500;
+        double result = (number / 10) / 10;
         return result;
     }
     public static void showResult(double number) { // Задание 3, процедура вывода на экран
