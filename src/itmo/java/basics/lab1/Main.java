@@ -11,7 +11,7 @@ public class Main {
 
 
         System.out.println(""); // Задание 3
-        int res = getNumber3();
+        double res = getNumber3();
         showResult(res);
 
 
@@ -36,9 +36,9 @@ public class Main {
         }
     }
 
-    public static int getNumber1() { // Задание 2, первое выражение
-        int a;
-        a = (46 + 10) * (10 / 3);
+    public static double getNumber1() { // Задание 2, первое выражение
+        double a;
+        a = (46 + 10) * ((double) 10 / 3);
         return a;
     }
     public static int getNumber2() { // Задание 2, второе выражение
@@ -47,12 +47,12 @@ public class Main {
         return b;
     }
 
-    public static int getNumber3() { // Задание 3, функция
+    public static double getNumber3() { // Задание 3, функция
         int number = 10500;
-        int result = (number / 10) / 10;
+        double result = (double) (number / 10) / 10;
         return result;
     }
-    public static void showResult(int number) { // Задание 3, процедура вывода на экран
+    public static void showResult(double number) { // Задание 3, процедура вывода на экран
         System.out.println(number);
     }
 
