@@ -131,17 +131,13 @@ public class Main {
     }
 
 
-    private static int[] checkNumber(int[] ints) { // проверить на наличие числа
+    private static boolean checkNumber(int[] ints) { // проверить на наличие числа
         for(int i:ints) {
-            if (i == 1) {
-                System.out.println("Массив содержит 1");
-                break;
-            }
-            if (i == 3) {
-                System.out.println("Массив содержит 3");
+            if (i == 1 || i == 3) {
+                System.out.println("Массив содержит 1 или 3");
             }
         }
-        return ints;
+        return true;
     }
 
 
