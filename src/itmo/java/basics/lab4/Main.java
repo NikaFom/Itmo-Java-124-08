@@ -9,10 +9,9 @@ public class Main {
         oddNumbers(); // часть 1 задание 1
 
 
-        int[] ints1 = new int[100]; // часть 1 задание 2
-        divideByThree(ints1);
-        divideByFive(ints1);
-        divideByThreeAndFive(ints1);
+        divideByThree(); // часть 1 задание 2
+        divideByFive();
+        divideByThreeAndFive();
 
 
         Scanner scanner = new Scanner(System.in); // часть 1 задание 3
@@ -80,63 +79,60 @@ public class Main {
     }
 
 
-    private static int[] divideByThree(int[] ints1) { // разделить на 3
-        for(int i = 1; i < ints1.length; i++) {
+    private static void divideByThree() { // разделить на 3
+        for(int i = 1; i <= 100; i++) {
             if(i % 3 == 0) {
                 System.out.println("Делится на 3: " + i + " ");
             }
         }
-        return ints1;
     }
 
 
-    private static int[] divideByFive(int[] ints1) { // разделить на 5
-        for(int i = 1; i < ints1.length; i++) {
+    private static void divideByFive() { // разделить на 5
+        for(int i = 1; i <= 100; i++) {
             if(i % 5 == 0) {
                 System.out.println("Делится на 5: " + i + " ");
             }
         }
-        return ints1;
     }
 
 
-    private static int[] divideByThreeAndFive(int[] ints1) { // разделить на 3 и 5
-        for(int i = 1; i < ints1.length; i++) {
+    private static void divideByThreeAndFive() { // разделить на 3 и 5
+        for(int i = 1; i <= 100; i++) {
             if(i % 3 == 0 && i % 5 == 0) {
                 System.out.println("Делится на 3 и на 5: " + i + " ");
             }
         }
-        return ints1;
     }
 
 
-    private static int checkSum(int a, int b, int c) { // вычислить сумму двух целых чисел
+    private static boolean checkSum(int a, int b, int c) { // вычислить сумму двух целых чисел
         int sum = a + b;
         if(sum == c) {
             System.out.println("Результат: true");
         }
-        return sum;
+        return true;
     }
 
 
-    private static int compareNumbers(int d, int e, int f) { // сравнить три целых числа
+    private static boolean compareNumbers(int d, int e, int f) { // сравнить три целых числа
         if(e > d && f > e) {
             System.out.println("Результат: true");
         }
-        return d;
+        return true;
     }
 
 
-    private static int[] checkFirstAndLast(int[] ints2) { // проверить первый и последний элемент
-        if(ints2[0] == 3 || ints2[ints2.length-1] == 3) {
+    private static boolean checkFirstAndLast(int[] ints) { // проверить первый и последний элемент
+        if(ints[0] == 3 || ints[ints.length-1] == 3) {
             System.out.println("true");
         }
-        return ints2;
+        return true;
     }
 
 
-    private static int[] checkNumber(int[] ints3) { // проверить на наличие числа
-        for(int i:ints3) {
+    private static int[] checkNumber(int[] ints) { // проверить на наличие числа
+        for(int i:ints) {
             if (i == 1) {
                 System.out.println("Массив содержит 1");
                 break;
@@ -145,56 +141,58 @@ public class Main {
                 System.out.println("Массив содержит 3");
             }
         }
-        return ints3;
+        return ints;
     }
 
 
-    private static int[] checkSorting(int[] ints4) { // проверить сортировку по возрастанию
-        int[] ints5 = new int[ints4.length];
-        for(int i = 0; i < ints4.length; i++) {
-            ints5[i] = ints4[i];
+    private static int[] checkSorting(int[] ints) { // проверить сортировку по возрастанию
+        int[] ints2 = new int[ints.length];
+        for(int i = 0; i < ints.length; i++) {
+            ints2[i] = ints[i];
         }
-        for(int i = 0; i < ints5.length; i++) {
-            for (int j = 0; j < ints5.length; j++) {
-                if (ints5[i] < ints5[j]) {
-                    int aj = ints5[j];
-                    int ai = ints5[i];
-                    ints5[j] = ai;
-                    ints5[i] = aj;
+        for(int i = 0; i < ints2.length; i++) {
+            for (int j = 0; j < ints2.length; j++) {
+                if (ints2[i] < ints2[j]) {
+                    int aj = ints2[j];
+                    int ai = ints2[i];
+                    ints2[j] = ai;
+                    ints2[i] = aj;
                 }
             }
         }
-        System.out.println(Arrays.toString(ints4));
-        System.out.println(Arrays.toString(ints5));
-        if(ints4 == ints5) {
+        System.out.println(Arrays.toString(ints));
+        System.out.println(Arrays.toString(ints2));
+        if(ints == ints2) {
             System.out.println("OK");
         } else {
             System.out.println("Please, try again");
         }
-        return ints4;
+        return ints;
     }
 
 
-    private static int[] changeFirstAndLast(int[] ints7) { // поменять местами первый и последний элемент
-        int first = ints7[0];
-        int last = ints7[ints7.length-1];
-        ints7[0] = last;
-        ints7[ints7.length-1] = first;
-        return ints7;
+    private static int[] changeFirstAndLast(int[] ints) { // поменять местами первый и последний элемент
+        int first = ints[0];
+        int last = ints[ints.length-1];
+        ints[0] = last;
+        ints[ints.length-1] = first;
+        return ints;
     }
 
 
-    private static int[] findUniqueNumber(int[] ints8) { // найти уникальное число
-        for(int i = 0; i < ints8.length; i++) {
+    private static int[] findUniqueNumber(int[] ints) { // найти уникальное число
+        for(int i = 0; i < ints.length; i++) {
             boolean flag = true;
-            for(int j = 0; j < ints8.length; j++) {
-                if(ints8[i] == ints8[j] && i != j) {
+            for(int j = 0; j < ints.length; j++) {
+                if(ints[i] == ints[j] && i != j) {
                     flag = false;
                     break;
                 }
             }
-            if(flag) System.out.println(ints8[i]);
+            if(flag) {
+                System.out.println(ints[i]);
+            }
         }
-        return ints8;
+        return ints;
     }
 }
