@@ -16,8 +16,10 @@ public class Main {
 
 
         String text2 = "Это бяка. Многие люди часто бякают. Это плохо."; // задание 3
-        replaceWord(text2);
-        System.out.println(replaceWord(text2));
+        String word1 = "бяка";
+        String word2 = "[вырезано цензурой]";
+        replaceWord(text2, word1, word2);
+        System.out.println(replaceWord(text2, word1, word2));
 
 
         String string1 = "караван автомобилей завтра отправляется"; // задание 4
@@ -51,16 +53,13 @@ public class Main {
         word = word.toLowerCase();
         StringBuilder builder1 = new StringBuilder(word);
         builder1.reverse();
-        if(word.equals(builder1.toString())) {
-            return true;
-        } else {
-            return false;
-        }
+        boolean result = word.equals(builder1.toString());
+        return result;
     }
 
 
-    private static String replaceWord(String text) { // заменить слово "бяка"
-        text = text.replace("бяка", "[вырезано цензурой]");
+    private static String replaceWord(String text, String word1, String word2) { // заменить слово "бяка"
+        text = text.replace(word1, word2);
         return text;
     }
 
