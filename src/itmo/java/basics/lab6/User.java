@@ -4,6 +4,6 @@ public class User extends ParentUser {
     @Override
     public void userInfo() {
         super.userInfo();
-        System.out.println("Имя пользователя " + super.name);
+        System.out.println("Имя пользователя " + name);
     }
 }
