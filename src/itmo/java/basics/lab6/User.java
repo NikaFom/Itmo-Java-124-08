@@ -1,14 +1,9 @@
 package itmo.java.basics.lab6;
 
-public class User extends Main{
-    public String name;
-
-    public User(String name) {
-        this.name = name;
-    }
-
+public class User extends ParentUser {
+    @Override
     public void userInfo() {
+        super.userInfo();
         System.out.println("Имя пользователя " + name);
     }
-
 }

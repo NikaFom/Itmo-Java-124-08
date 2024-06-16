@@ -22,17 +22,13 @@ public abstract class Main {
         Main child = new Child();
         ((Child) child).printInt(a);
 
-        int age = scanner.nextInt(); // задание 5
-        Main user = new User("John");
-        user.userInfo(age);
-        ((User) user).userInfo();
+
+        ParentUser user = new User(); // задание 5
+        user.userInfo();
     }
 
 
     public static void printLanguage(Speakable language) {
         language.printLanguage();
-    }
-    public void userInfo(int age) {
-        System.out.println("Возраст пользователя: " + age);
     }
 }
