@@ -60,10 +60,9 @@ public class Main {
         }
     }
 
-    public static void getScores(Map<?, ?> map, String name) { // считать имя с консоли и вывести на экран очки
-        Set<String> users = (Set<String>) map.keySet();
+    public static void getScores(Map<User, Integer> map, String name) { // считать имя с консоли и вывести на экран очки
         if (map.containsKey(name)) {
-            Integer score = (Integer) map.get(name);
+            Integer score = map.get(name);
             System.out.println(score);
         } else {
             System.out.println("Игрока с таким именем не существует");
