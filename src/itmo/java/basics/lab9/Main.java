@@ -61,14 +61,12 @@ public class Main {
     }
 
     public static void getScores(Map<?, ?> map, String name) { // считать имя с консоли и вывести на экран очки
-        for(Map.Entry<?, ?> item:map.entrySet()) {
-            Set<String> users = (Set<String>) item.getKey();
-            if (users.contains(name)) {
-                Integer score = (Integer) map.get(name);
-                System.out.println(score);
-            } else {
-                System.out.println("Игрока с таким именем не существует");
-            }
+        Set<String> users = (Set<String>) map.keySet();
+        if (map.containsKey(name)) {
+            Integer score = (Integer) map.get(name);
+            System.out.println(score);
+        } else {
+            System.out.println("Игрока с таким именем не существует");
         }
     }
 }
