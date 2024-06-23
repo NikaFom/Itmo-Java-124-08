@@ -39,7 +39,8 @@ public class Main {
         game.put(new User("Ben"), 10);
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
-        getScores(game, name);
+        User userControl = new User(name);
+        getScores(game, userControl);
     }
 
     public static <T> Collection<T> uniqueList(List<T> list) { // получить коллекцию без дубликатов
@@ -60,9 +61,9 @@ public class Main {
         }
     }
 
-    public static void getScores(Map<User, Integer> map, String name) { // считать имя с консоли и вывести на экран очки
-        if (map.containsKey(name)) {
-            Integer score = map.get(name);
+    public static void getScores(Map<User, Integer> map, User user) { // считать имя с консоли и вывести на экран очки
+        if (map.containsKey(user)) {
+            Integer score = map.get(user);
             System.out.println(score);
         } else {
             System.out.println("Игрока с таким именем не существует");

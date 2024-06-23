@@ -1,6 +1,7 @@
 package itmo.java.basics.lab9;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -26,13 +27,17 @@ public class User {
                 '}';
     }
 
-    public static void getScores(Map map) {
-        Set<String> users = map.keySet();
-        //System.out.println(users);
-        //Collection<Integer> values = map.values();
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        Integer score = (Integer) map.get(name);
-        System.out.println(score);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return name.equals(user.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int prime = 33;
+        return prime* Objects.hash(name);
     }
 }
