@@ -32,20 +32,18 @@ public class Main {
         long finishList3 = currentTimeMillis();
         System.out.println("Время, потраченное на получение рандомных элементов: " + (finishList3 - startList3));
 
-        Map<String, Integer> game = new HashMap<>(); // задание 4
-        User user1 = new User("Tom");
-        User user2 = new User("Hugo");
-        User user3 = new User("Angelina");
-        User user4 = new User("Ben");
-        game.put(user1.getName(), 26);
-        game.put(user2.getName(), 31);
-        game.put(user3.getName(), 17);
-        game.put(user4.getName(), 10);
-        getScores(game);
+        Map<User, Integer> game = new HashMap<>(); // задание 4
+        game.put(new User("Tom"), 26);
+        game.put(new User("Hugo"), 31);
+        game.put(new User("Angelina"), 17);
+        game.put(new User("Ben"), 10);
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        getScores(game, name);
     }
 
-    public static Set<Object> uniqueList(List<Object> list) { // получить коллекцию без дубликатов
-        Set<Object> uniqueSet = new HashSet<>(list);
+    public static <T> Collection<T> uniqueList(List<T> list) { // получить коллекцию без дубликатов
+        Set<T> uniqueSet = new HashSet<>(list);
         return uniqueSet;
     }
 
@@ -62,16 +60,15 @@ public class Main {
         }
     }
 
-    public static void getScores(Map map) { // считать имя с консоли и вывести на экран очки
-        Set<String> users = map.keySet();
-        System.out.println(users);
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        if(users.contains(name)) {
-            Integer score = (Integer) map.get(name);
-            System.out.println(score);
-        } else {
-            System.out.println("Игрока с таким именем не существует");
+    public static void getScores(Map<?, ?> map, String name) { // считать имя с консоли и вывести на экран очки
+        for(Map.Entry<?, ?> item:map.entrySet()) {
+            Set<String> users = (Set<String>) item.getKey();
+            if (users.contains(name)) {
+                Integer score = (Integer) map.get(name);
+                System.out.println(score);
+            } else {
+                System.out.println("Игрока с таким именем не существует");
+            }
         }
     }
 }
