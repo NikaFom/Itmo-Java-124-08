@@ -58,11 +58,9 @@ public class Main {
             for (String string; (string = scanText.readLine()) != null; ) {
                 text.append(string).append('\n');
             }
-            String string1 = text.toString().replaceAll("\\pP", "~");
-            String string2 = string1.replace('~', '$');
+            String string = text.toString().replaceAll("\\pP", "$");
             PrintWriter writer = new PrintWriter(file);
-            writer.append(string2);
-            writer.close();
+            writer.append(string);
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
