@@ -12,7 +12,7 @@ public class Main {
         counter.run();
         counter.run();
 
-        MyThreadNew myThreadNew = new MyThreadNew();
+        MyThreadNew myThreadNew = new MyThreadNew(); // задание 4
         myThreadNew.start();
     }
 
