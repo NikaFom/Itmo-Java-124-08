@@ -8,9 +8,10 @@ public class Main {
         System.out.println(myThread.getState());
 
 
-        Counter counter = new Counter(); // задание 3
-        counter.run();
-        counter.run();
+        Counter counter = new Counter();
+        CounterThread counterThread = new CounterThread(counter); // задание 3
+        counterThread.countThread();
+
 
 
         Object lock = new Object(); // задание 4
