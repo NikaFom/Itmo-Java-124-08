@@ -13,7 +13,7 @@ public class Counter {
 
     public void run() { // запускает 100 потоков, каждый из которых вызывает метод 1000 раз
         for(int i = 0; i < 100; i++) {
-            new MyThread().start();
+            new MyThread().run();
             int j = 0;
             while (j < 1000) {
                 Counter.increment();

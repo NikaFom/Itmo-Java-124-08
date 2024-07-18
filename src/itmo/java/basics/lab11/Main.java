@@ -12,9 +12,11 @@ public class Main {
         counter.run();
         counter.run();
 
-        MyThreadNew myThreadNew = new MyThreadNew(); // задание 4
+
+        Object lock = new Object(); // задание 4
+        MyThreadNew myThreadNew = new MyThreadNew(lock);
         myThreadNew.start();
+        MyThreadNew myThreadNew2 = new MyThreadNew(lock);
+        myThreadNew2.start();
     }
-
-
 }
